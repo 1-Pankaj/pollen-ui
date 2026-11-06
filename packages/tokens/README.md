@@ -1,11 +1,11 @@
-# @pollen/tokens
+# @pollen-ui/tokens
 
 The Pollen design language as plain data: colors, shadows, radii, spacing,
 type sizes and motion presets, for whatever platform renders next.
 
-> This package lives in the [Pollen UI monorepo](https://github.com/1-Pankaj/pollen-ui)
-> and is not published to npm. Web apps read the same values from
-> `pollen-ui` itself: `import { light, dark, springSnappy } from "pollen-ui/tokens"`.
+> Published on npm as [`@pollen-ui/tokens`](https://www.npmjs.com/package/@pollen-ui/tokens).
+> Web apps can also read the same values from `pollen-ui` itself:
+> `import { light, dark, springSnappy } from "pollen-ui/tokens"`.
 
 - **Zero dependencies.** Every value is a string or a number. Runs in the
   browser, in Node, and inside a React Native bundle.
@@ -18,7 +18,7 @@ type sizes and motion presets, for whatever platform renders next.
   `Transition`, or to react-native-reanimated as a `SpringConfig`.
 
 ```ts
-import { light, dark, springSnappy } from "@pollen/tokens";
+import { light, dark, springSnappy } from "@pollen-ui/tokens";
 import { useColorScheme } from "react-native";
 
 const theme = useColorScheme() === "dark" ? dark : light;
@@ -27,7 +27,7 @@ springSnappy;        // { stiffness: 400, damping: 32 }
 ```
 
 Shadows are CSS box-shadow strings. React Native cannot read those directly;
-`@pollen/native` maps each depth to `shadowColor`/`shadowOffset`/
+`@pollen-ui/native` maps each depth to `shadowColor`/`shadowOffset`/
 `shadowOpacity`/`elevation` in one place.
 
 ## License

@@ -1,10 +1,10 @@
 import { Easing, type WithSpringConfig, type WithTimingConfig } from "react-native-reanimated";
-import { easeOut, springGentle, springSnappy, springSoft } from "@pollen/tokens";
+import { easeOut, springGentle, springSnappy, springSoft } from "@pollen-ui/tokens";
 
 /**
  * Motion presets for the native primitives.
  *
- * @pollen/tokens defines the spring presets as plain
+ * @pollen-ui/tokens defines the spring presets as plain
  * stiffness/damping/mass objects, which is exactly the shape
  * react-native-reanimated's SpringConfig takes. The typed aliases
  * below keep components consistent: they pass tokens, not ad-hoc

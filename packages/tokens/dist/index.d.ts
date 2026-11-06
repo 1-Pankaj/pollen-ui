@@ -1,8 +1,8 @@
 /**
- * @pollen/tokens — the Pollen design language as plain data.
+ * @pollen-ui/tokens — the Pollen design language as plain data.
  *
  * One vocabulary shared by the web library (pollen-ui) and the React
- * Native sibling (@pollen/native). There are no runtime dependencies
+ * Native sibling (@pollen-ui/native). There are no runtime dependencies
  * and no platform imports: every value is a string or a number, so the
  * same module runs in a browser, in Node, and inside a React Native
  * bundle.
@@ -12,7 +12,7 @@
  * scripts/check-tokens-sync.mjs fails when the two drift apart.
  *
  * Shadows are CSS box-shadow strings. React Native cannot read those
- * directly; @pollen/native maps the depths to shadowColor/shadowOffset/
+ * directly; @pollen-ui/native maps the depths to shadowColor/shadowOffset/
  * shadowOpacity/elevation in one place (src/lib/shadows.ts).
  */
 /** Every color a surface can be painted with, in one theme. */

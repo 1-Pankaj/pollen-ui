@@ -11,9 +11,9 @@ a committed date.
 - 60 components in five families, plus 104 icons
 - Docs site: 59 pages, live playground on every page, Theme Studio,
   templates gallery
-- `@pollen/tokens`: the design tokens as an installable TypeScript
+- `@pollen-ui/tokens`: the design tokens as an installable TypeScript
   package, shared across web and native
-- `@pollen/native`: React Native primitives implementing the same
+- `@pollen-ui/native`: React Native primitives implementing the same
   design language (Button, Badge, Input, Switch, Slider, Progress,
   Skeleton, Avatar)
 - Accessibility pass across overlays, menus, form controls and motion
@@ -23,7 +23,7 @@ a committed date.
 ## Next
 
 - **More native primitives.** Checkbox, Radio Group, OTP input, Rating,
-  Tag Input and Toast for `@pollen/native`, following the same
+  Tag Input and Toast for `@pollen-ui/native`, following the same
   tokens-first approach.
 - **More entry points for the web library.** Per-family imports
   (`pollen-ui/overlays` and friends) to keep bundle sizes tight for
@@ -38,7 +38,7 @@ a committed date.
 
 - **Data display family for native.** Table equivalents for React
   Native with the same visual language.
-- **A tokens playground.** Live editing of `@pollen/tokens` values with
+- **A tokens playground.** Live editing of `@pollen-ui/tokens` values with
   a real-time preview across several components at once.
 - **Figma library.** A component kit mirroring the package so designs
   and code speak the same language.

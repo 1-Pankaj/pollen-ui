@@ -28,9 +28,9 @@ const deps: { name: string; license: string; role: string }[] = [
   { name: "CodeMirror 6", license: "MIT", role: "Docs site — playground editor" },
   { name: "Sucrase", license: "MIT", role: "Docs site — in-browser compilation" },
   { name: "next-themes", license: "MIT", role: "Docs site — theme switching" },
-  { name: "React Native", license: "MIT", role: "@pollen/native runtime" },
-  { name: "Reanimated", license: "MIT", role: "@pollen/native motion" },
-  { name: "NativeWind", license: "MIT", role: "@pollen/native styling" },
+  { name: "React Native", license: "MIT", role: "@pollen-ui/native runtime" },
+  { name: "Reanimated", license: "MIT", role: "@pollen-ui/native motion" },
+  { name: "NativeWind", license: "MIT", role: "@pollen-ui/native styling" },
 ];
 
 export default function LicensingPage() {

@@ -1,7 +1,7 @@
 /**
- * Native package verification: loads the real source of @pollen/native
+ * Native package verification: loads the real source of @pollen-ui/native
  * pure modules (with react-native / reanimated / gesture-handler stubbed)
- * plus the real @pollen/tokens, and asserts the behaviour that the
+ * plus the real @pollen-ui/tokens, and asserts the behaviour that the
  * components depend on. Run: node scripts/native-verify.mjs
  */
 import { registerHooks } from "node:module";
@@ -26,7 +26,7 @@ const hooks = {
     if (RN_STUBS.has(specifier)) {
       return { url: `stub:${specifier}`, shortCircuit: true };
     }
-    if (specifier === "@pollen/tokens") {
+    if (specifier === "@pollen-ui/tokens") {
       return {
         url: pathToFileURL(path.join(ROOT, "packages/tokens/src/index.ts")).href,
         shortCircuit: true,

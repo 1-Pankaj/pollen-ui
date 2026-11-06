@@ -126,9 +126,9 @@ export default async function ComponentPage({
         <Reveal className="mt-12 scroll-mt-24">
           <h2 id="react-native" className="scroll-mt-24 text-2xl font-semibold tracking-tight">React Native</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            The same design language on iOS and Android. @pollen/native ships
+            The same design language on iOS and Android. @pollen-ui/native ships
             this component with the shared tokens - colors, shadows, spacing
-            and springs - from @pollen/tokens. Requires react-native &gt;= 0.74
+            and springs - from @pollen-ui/tokens. Requires react-native &gt;= 0.74
             and react-native-reanimated &gt;= 3.16; under Expo, NativeWind 4
             handles the className passthrough.
           </p>

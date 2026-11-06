@@ -24,8 +24,8 @@ up on save without a build step.
 | Path | What it is |
 | --- | --- |
 | `packages/pollen-ui` | The component library (npm package `pollen-ui`). Components live in `src/components`, tokens and keyframes in `src/css/pollen.css`, icons in `src/icons.tsx`. |
-| `packages/tokens` | `@pollen/tokens` — the design tokens as TypeScript, shared by the web library and the native package. |
-| `packages/native` | `@pollen/native` — React Native primitives implementing the same design language. |
+| `packages/tokens` | `@pollen-ui/tokens` — the design tokens as TypeScript, shared by the web library and the native package. |
+| `packages/native` | `@pollen-ui/native` — React Native primitives implementing the same design language. |
 | `src` | The documentation site (Next.js App Router). Registry entries in `src/lib/registry` drive every docs page. |
 
 ## Common tasks
@@ -36,9 +36,9 @@ up on save without a build step.
 | Build the library (`dist/`) | `npm run build:lib` |
 | Type-check the site | `npm run typecheck` |
 | Type-check the library | `npm run typecheck:lib` |
-| Type-check the native package | `npm run typecheck --workspace @pollen/native` |
+| Type-check the native package | `npm run typecheck --workspace @pollen-ui/native` |
 | Lint everything | `npm run lint` |
-| Rebuild `@pollen/tokens` | `npm run build --workspace @pollen/tokens` |
+| Rebuild `@pollen-ui/tokens` | `npm run build --workspace @pollen-ui/tokens` |
 | Verify token agreement | `npm run check:tokens` |
 
 Before opening a pull request, make sure all of the following pass:
@@ -74,7 +74,7 @@ npm run build
    `framer-motion`, and that list is deliberate.
 5. **Keep the native package in sync conceptually.** If you change a
    token, run `npm run check:tokens` — `pollen.css`, the Tailwind
-   bridge, `@pollen/tokens` and the native package must agree.
+   bridge, `@pollen-ui/tokens` and the native package must agree.
 
 ## Commit conventions
 

@@ -43,12 +43,11 @@ export default function Page() {
   return <Button>Works in Next.js</Button>;
 }`;
 
-const RN_SNIPPET = `# @pollen/native ships in the repository, not on npm:
-# github.com/1-Pankaj/pollen-ui → packages/native (TypeScript source)
+const RN_SNIPPET = `npm install @pollen-ui/native
 # requires react-native >= 0.74, react-native-reanimated >= 3.16
 # under Expo, NativeWind 4 handles the className passthrough
 
-import { Button } from "@pollen/native";
+import { Button } from "@pollen-ui/native";
 
 export function App() {
   return (
@@ -179,14 +178,14 @@ export default function PlaygroundPage() {
             <TabsContent value="native">
               <p className="mb-4 max-w-2xl text-[13.5px] leading-relaxed text-muted-foreground">
                 The same design language on iOS and Android through
-                @pollen/native, sharing tokens with the web library.
+                @pollen-ui/native, sharing tokens with the web library.
               </p>
               <CodeBlock code={RN_SNIPPET} filename="app.tsx" language="tsx" />
             </TabsContent>
           </Tabs>
         </div>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-faint">
-          @pollen/native ships sixteen primitives - Button, Input, Badge,
+          @pollen-ui/native ships sixteen primitives - Button, Input, Badge,
           Avatar, Switch, Slider, Progress, Skeleton, Card, Checkbox,
           RadioGroup, Textarea, SegmentedControl, PinInput, Rating and
           Stepper - each with its own docs page, and the{" "}

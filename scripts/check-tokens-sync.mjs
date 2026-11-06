@@ -5,7 +5,7 @@
  *
  *   1. packages/pollen-ui/src/css/pollen.css   (visual source of truth)
  *   2. packages/pollen-ui/src/tokens.ts        (pollen-ui/tokens subpath)
- *   3. packages/tokens/src/index.ts            (@pollen/tokens)
+ *   3. packages/tokens/src/index.ts            (@pollen-ui/tokens)
  *
  * This script bundles (2) and (3) with esbuild, imports them, parses
  * the custom properties out of (1) for the :root and .dark blocks, and
@@ -148,5 +148,5 @@ if (problems.length > 0) {
 }
 
 console.log(
-  `Token sync OK: pollen.css <-> pollen-ui/tokens <-> @pollen/tokens agree (${Object.keys(cssLight).length} light vars, ${Object.keys(cssDark).length} dark overrides, 3 spring presets).`,
+  `Token sync OK: pollen.css <-> pollen-ui/tokens <-> @pollen-ui/tokens agree (${Object.keys(cssLight).length} light vars, ${Object.keys(cssDark).length} dark overrides, 3 spring presets).`,
 );

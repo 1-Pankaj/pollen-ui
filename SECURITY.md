@@ -19,8 +19,8 @@ before the details are public.
 
 Include whatever you have of the following:
 
-- The affected package and version (`pollen-ui`, `@pollen/tokens` or
-  `@pollen/native`)
+- The affected package and version (`pollen-ui`, `@pollen-ui/tokens` or
+  `@pollen-ui/native`)
 - A description of the issue and how it could be exploited
 - Steps to reproduce, or a minimal demo if possible
 - Any known workarounds

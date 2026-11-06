@@ -8,16 +8,10 @@ import { registry } from "@/lib/registry";
 export const metadata: Metadata = {
   title: "React Native",
   description:
-    "The Pollen design language on iOS and Android: install steps, usage for every component @pollen/native ships, and what is web-only today.",
+    "The Pollen design language on iOS and Android: install steps, usage for every component @pollen-ui/native ships, and what is web-only today.",
 };
 
-const INSTALL_SNIPPET = `# @pollen/native is not on npm — the "@pollen" scope belongs to an
-# unrelated account. It ships as TypeScript source in the repository;
-# vendor it into your app as a file dependency:
-
-git clone https://github.com/1-Pankaj/pollen-ui.git
-cp -r pollen-ui/packages/native ./pollen-native
-npm install ./pollen-native
+const INSTALL_SNIPPET = `npm install @pollen-ui/native
 
 # Peer dependencies (Expo resolves the matching versions):
 npx expo install react-native-reanimated react-native-gesture-handler
@@ -71,9 +65,9 @@ export default function ReactNativePage() {
           The design language on iOS and Android
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          @pollen/native ships sixteen primitives that share their colors,
+          @pollen-ui/native ships sixteen primitives that share their colors,
           shadows, spacing and springs with the web library through
-          @pollen/tokens. This page is the complete set: install steps,
+          @pollen-ui/tokens. This page is the complete set: install steps,
           working native code for every component, and what is web-only
           today.
         </p>
@@ -105,7 +99,7 @@ export default function ReactNativePage() {
           carries the roles the OS screen readers expect - checkbox,
           radiogroup, adjustable - so VoiceOver and TalkBack announce them
           natively. Colors, spacing and spring presets come from
-          @pollen/tokens, so a native screen and its web counterpart read as
+          @pollen-ui/tokens, so a native screen and its web counterpart read as
           the same product.
         </p>
       </Reveal>
@@ -176,13 +170,13 @@ export default function ReactNativePage() {
           the motion set - has no native implementation yet. Selecting React
           Native on those docs pages shows a note instead of placeholder
           code. The primitives above are the complete surface of
-          @pollen/native today; new components are added where native
+          @pollen-ui/native today; new components are added where native
           implementations add the most value.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-faint">
           Building a web-only surface in React Native? Compose it from the
           sixteen primitives and style it with the shared tokens in{" "}
-          <span className="font-mono text-[12.5px]">@pollen/tokens</span> - the
+          <span className="font-mono text-[12.5px]">@pollen-ui/tokens</span> - the
           same foundation the native package builds on.
         </p>
       </Reveal>

@@ -1,5 +1,5 @@
 {
-  "name": "@pollen/tokens",
+  "name": "@pollen-ui/tokens",
   "version": "5.0.0",
   "description": "Platform-neutral design tokens for the Pollen design language. One vocabulary of colors, shadows, radii and motion presets shared by the web library and the React Native sibling.",
   "license": "MIT",

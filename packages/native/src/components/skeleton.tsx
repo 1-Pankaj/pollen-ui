@@ -14,7 +14,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from "react-native-reanimated";
-import { radius, spacing } from "@pollen/tokens";
+import { radius, spacing } from "@pollen-ui/tokens";
 import { usePollenTheme } from "../lib/theme";
 import { passthroughClassName } from "../lib/className";
 

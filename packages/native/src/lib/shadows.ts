@@ -1,9 +1,9 @@
-import type { PollenShadows } from "@pollen/tokens";
+import type { PollenShadows } from "@pollen-ui/tokens";
 
 /**
  * Mapping the token shadows to React Native.
  *
- * @pollen/tokens stores shadows as CSS box-shadow strings, the same
+ * @pollen-ui/tokens stores shadows as CSS box-shadow strings, the same
  * strings the web stylesheet uses. React Native cannot read those:
  * iOS wants shadowColor/shadowOffset/shadowOpacity/shadowRadius and
  * Android only exposes a single elevation number. This module parses

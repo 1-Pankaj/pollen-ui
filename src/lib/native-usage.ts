@@ -1,5 +1,5 @@
 /**
- * React Native usage for the components that exist in @pollen/native.
+ * React Native usage for the components that exist in @pollen-ui/native.
  * Keyed by the web registry slug - the key exists only when the native
  * package really ships the component, and every import below is checked
  * against the real native index by scripts/generate-docs-data.mjs.
@@ -13,7 +13,7 @@ export interface NativeUsage {
 
 export const nativeUsage: Record<string, NativeUsage> = {
   button: {
-    code: `import { Button } from "@pollen/native";
+    code: `import { Button } from "@pollen-ui/native";
 
 export function Example() {
   return (
@@ -31,7 +31,7 @@ export function Example() {
   },
   input: {
     code: `import { useState } from "react";
-import { Input } from "@pollen/native";
+import { Input } from "@pollen-ui/native";
 
 export function Example() {
   const [email, setEmail] = useState("");
@@ -48,7 +48,7 @@ export function Example() {
 }`,
   },
   badge: {
-    code: `import { Badge } from "@pollen/native";
+    code: `import { Badge } from "@pollen-ui/native";
 
 export function Example() {
   return (
@@ -59,7 +59,7 @@ export function Example() {
 }`,
   },
   avatar: {
-    code: `import { Avatar, AvatarGroup } from "@pollen/native";
+    code: `import { Avatar, AvatarGroup } from "@pollen-ui/native";
 
 export function Example() {
   return (
@@ -74,7 +74,7 @@ export function Example() {
 }`,
   },
   switch: {
-    code: `import { Switch } from "@pollen/native";
+    code: `import { Switch } from "@pollen-ui/native";
 
 export function Example() {
   const [on, setOn] = useState(true);
@@ -92,7 +92,7 @@ export function Example() {
 }`,
   },
   slider: {
-    code: `import { Slider } from "@pollen/native";
+    code: `import { Slider } from "@pollen-ui/native";
 
 export function Example() {
   const [volume, setVolume] = useState(40);
@@ -109,14 +109,14 @@ export function Example() {
 }`,
   },
   progress: {
-    code: `import { Progress } from "@pollen/native";
+    code: `import { Progress } from "@pollen-ui/native";
 
 export function Example() {
   return <Progress value={62} max={100} size="md" showValue />;
 }`,
   },
   skeleton: {
-    code: `import { Skeleton, SkeletonText } from "@pollen/native";
+    code: `import { Skeleton, SkeletonText } from "@pollen-ui/native";
 
 export function LoadingProfile() {
   return (
@@ -128,8 +128,8 @@ export function LoadingProfile() {
 }`,
   },
   card: {
-    code: `import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@pollen/native";
-import { Button } from "@pollen/native";
+    code: `import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@pollen-ui/native";
+import { Button } from "@pollen-ui/native";
 
 export function Example() {
   return (
@@ -152,7 +152,7 @@ export function Example() {
   },
   checkbox: {
     code: `import { useState } from "react";
-import { Checkbox } from "@pollen/native";
+import { Checkbox } from "@pollen-ui/native";
 
 export function Example() {
   const [agreed, setAgreed] = useState(false);
@@ -169,7 +169,7 @@ export function Example() {
 }`,
   },
   "radio-group": {
-    code: `import { RadioGroup, Radio } from "@pollen/native";
+    code: `import { RadioGroup, Radio } from "@pollen-ui/native";
 
 export function Example() {
   const [plan, setPlan] = useState("team");
@@ -186,7 +186,7 @@ export function Example() {
   },
   textarea: {
     code: `import { useState } from "react";
-import { Textarea } from "@pollen/native";
+import { Textarea } from "@pollen-ui/native";
 
 export function Example() {
   const [notes, setNotes] = useState("");
@@ -205,7 +205,7 @@ export function Example() {
   },
   "segmented-control": {
     code: `import { useState } from "react";
-import { SegmentedControl } from "@pollen/native";
+import { SegmentedControl } from "@pollen-ui/native";
 
 export function Example() {
   const [range, setRange] = useState("week");
@@ -226,7 +226,7 @@ export function Example() {
 }`,
   },
   "otp-input": {
-    code: `import { PinInput } from "@pollen/native";
+    code: `import { PinInput } from "@pollen-ui/native";
 
 export function Example() {
   return (
@@ -240,7 +240,7 @@ export function Example() {
 }`,
   },
   rating: {
-    code: `import { Rating } from "@pollen/native";
+    code: `import { Rating } from "@pollen-ui/native";
 
 export function Example() {
   const [score, setScore] = useState(0);
@@ -256,7 +256,7 @@ export function Example() {
 }`,
   },
   stepper: {
-    code: `import { Stepper } from "@pollen/native";
+    code: `import { Stepper } from "@pollen-ui/native";
 
 export function Example() {
   const [seats, setSeats] = useState(3);

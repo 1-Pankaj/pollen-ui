@@ -12,7 +12,7 @@ export interface DemoBlockProps {
   /** Precomputed JavaScript variant; omit to keep TS-only. */
   jsCode?: string | null;
   /**
-   * React Native usage for the component, when @pollen/native ships
+   * React Native usage for the component, when @pollen-ui/native ships
    * it. Shown instead of the web snippet while the React Native
    * stack is selected.
    */

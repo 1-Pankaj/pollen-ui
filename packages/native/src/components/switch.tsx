@@ -15,7 +15,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { fontSize, spacing } from "@pollen/tokens";
+import { fontSize, spacing } from "@pollen-ui/tokens";
 import { usePollenTheme, white } from "../lib/theme";
 import { mapShadow } from "../lib/shadows";
 import { springSnappyConfig } from "../lib/motion";

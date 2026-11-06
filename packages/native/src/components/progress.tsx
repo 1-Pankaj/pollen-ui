@@ -16,7 +16,7 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
-import { fontSize } from "@pollen/tokens";
+import { fontSize } from "@pollen-ui/tokens";
 import { usePollenTheme } from "../lib/theme";
 import { springSoftConfig } from "../lib/motion";
 import { passthroughClassName } from "../lib/className";

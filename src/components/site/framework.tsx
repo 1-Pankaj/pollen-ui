@@ -93,7 +93,7 @@ export function NativeBanner() {
     <aside className="mt-4 w-full rounded-xl bg-fill/60 px-4 py-3 ring-1 ring-[var(--pollen-border)]">
       <p className="text-[13px] leading-relaxed text-muted-foreground">
         <span className="font-medium text-foreground">React Native coverage today: </span>
-        sixteen primitives ship in @pollen/native. Code panes show the native
+        sixteen primitives ship in @pollen-ui/native. Code panes show the native
         example where it exists; components without a chip below are
         web-only for now and say so in place.
       </p>

@@ -58,7 +58,7 @@ try {
     await stackCtrl.locator("button:has-text('React Native')").click();
     await page.waitForTimeout(200);
     code = await page.locator("figure pre").first().textContent();
-    check("React Native variant: native import shown", code.includes("@pollen/native"));
+    check("React Native variant: native import shown", code.includes("@pollen-ui/native"));
     check(
       "native banner states coverage honestly",
       (await page.getByText("React Native coverage today").count()) > 0,
@@ -333,7 +333,7 @@ try {
     check("Next.js snippet visible on its tab", (await page.locator("text=Works in Next.js").count()) > 0);
     await page.locator('[role="tab"]:has-text("React Native")').click();
     await page.waitForTimeout(400);
-    check("React Native snippet visible on its tab", (await page.locator("text=@pollen/native").count()) > 0);
+    check("React Native snippet visible on its tab", (await page.locator("text=@pollen-ui/native").count()) > 0);
     check("scope rows kept", (await page.locator("text=lucide-react").count()) > 0 && (await page.locator("text=What you can import").count()) > 0);
 
     // Language toggle in the toolbar.

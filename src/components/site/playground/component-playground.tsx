@@ -95,7 +95,7 @@ export function ComponentPlayground({
   /** Per-stack starting code; the language switch picks the variant. */
   variants: { react: StackVariant; next: StackVariant };
   spec?: PlaygroundSpec;
-  /** React Native usage, when @pollen/native ships the component. */
+  /** React Native usage, when @pollen-ui/native ships the component. */
   nativeCode?: string | null;
   componentTitle?: string;
 }) {

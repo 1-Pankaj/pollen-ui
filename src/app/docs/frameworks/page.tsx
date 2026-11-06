@@ -163,7 +163,7 @@ export default function FrameworksPage() {
       <Reveal className="mt-12">
         <h2 className="text-2xl font-semibold tracking-tight">Beyond the browser</h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          React Native ships as its own package, @pollen/native: sixteen
+          React Native ships as its own package, @pollen-ui/native: sixteen
           primitives implemented with platform APIs, sharing the same tokens.
           The{" "}
           <a

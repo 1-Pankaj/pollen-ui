@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [5.0.0] - 2026-11-05
 
 The first public release of the reworked library. One version across all
-three packages: `pollen-ui`, `@pollen/tokens`, `@pollen/native`.
+three packages: `pollen-ui`, `@pollen-ui/tokens`, `@pollen-ui/native`.
 
 ### pollen-ui
 
@@ -49,14 +49,14 @@ three packages: `pollen-ui`, `@pollen/tokens`, `@pollen/native`.
   resumes from the interrupted position, TagInput keeps focus while the
   shake animation replays.
 
-### @pollen/tokens (new package)
+### @pollen-ui/tokens (new package)
 
 - The design tokens behind the library as installable TypeScript:
   colors, surfaces, shadows, radii, spacing, type scale and the three
   spring presets, in light and dark. One source of truth shared by the
   web library, the docs site and the native package.
 
-### @pollen/native (new package)
+### @pollen-ui/native (new package)
 
 - Eight primitives on React Native (Button, Badge, Input, Switch,
   Slider, Progress, Skeleton, SkeletonText, Avatar, AvatarGroup)

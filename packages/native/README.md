@@ -1,17 +1,17 @@
-# @pollen/native
+# @pollen-ui/native
 
 The Pollen design language on iOS and Android. React Native primitives
 that share their colors, shadows, spacing and springs with the web
-library through `@pollen/tokens` — same achromatic palette, same single
+library through `@pollen-ui/tokens` — same achromatic palette, same single
 blue accent, same layered elevation, same spring character.
 
 Each primitive is implemented with platform APIs: press feedback
 through Reanimated springs, shadows mapped to `shadowColor`/`elevation`
 pairs per platform, gesture work through react-native-gesture-handler.
 
-This package is part of the [Pollen UI monorepo](https://github.com/1-Pankaj/pollen-ui)
-and is not published to npm — the TypeScript source in `packages/native/src`
-is the distribution, which Metro and Expo compile directly.
+Published on npm as [`@pollen-ui/native`](https://www.npmjs.com/package/@pollen-ui/native):
+`npm install @pollen-ui/native`. It ships TypeScript source, which Metro
+and Expo compile directly — no build step and no native module of its own.
 
 ## Components
 
@@ -54,7 +54,7 @@ directly — no build step and no native module of its own.
 
 ```tsx
 import { View, ScrollView } from "react-native";
-import { Button, Input, Switch, usePollenTheme } from "@pollen/native";
+import { Button, Input, Switch, usePollenTheme } from "@pollen-ui/native";
 
 export default function SignIn() {
   const theme = usePollenTheme();
@@ -78,8 +78,8 @@ root:
 
 ```tsx
 import { useColorScheme } from "react-native";
-import { dark, light, type PollenTheme } from "@pollen/tokens";
-import { usePollenTheme } from "@pollen/native";
+import { dark, light, type PollenTheme } from "@pollen-ui/tokens";
+import { usePollenTheme } from "@pollen-ui/native";
 
 // A minimal provider: flip once at the root, read anywhere below.
 export function useAppTheme(): PollenTheme {

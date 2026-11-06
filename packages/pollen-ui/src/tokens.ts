@@ -7,7 +7,7 @@
  *   import { light, dark, springSnappy } from "pollen-ui/tokens";
  *
  * The values mirror packages/pollen-ui/src/css/pollen.css (the visual
- * source of truth) and the platform-neutral @pollen/tokens package —
+ * source of truth) and the platform-neutral @pollen-ui/tokens package —
  * scripts/check-tokens-sync.mjs in the repository root fails when any
  * of the three drift apart. Spring presets are plain objects that
  * framer-motion accepts as a Transition unchanged.

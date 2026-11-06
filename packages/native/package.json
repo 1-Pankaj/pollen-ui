@@ -1,5 +1,5 @@
 {
-  "name": "@pollen/native",
+  "name": "@pollen-ui/native",
   "version": "5.0.0",
   "description": "The Pollen design language on iOS and Android: primitives family, sharing tokens with the web library.",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pollen/tokens": "*"
+    "@pollen-ui/tokens": "*"
   },
   "peerDependencies": {
     "nativewind": ">=4.0.0",

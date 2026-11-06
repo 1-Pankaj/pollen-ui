@@ -14,8 +14,8 @@ body:
       label: Package
       options:
         - pollen-ui (web components)
-        - "@pollen/tokens"
-        - "@pollen/native"
+        - "@pollen-ui/tokens"
+        - "@pollen-ui/native"
         - Documentation site
     validations:
       required: true

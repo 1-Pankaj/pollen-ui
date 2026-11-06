@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 /**
- * Build config for @pollen/tokens.
+ * Build config for @pollen-ui/tokens.
  *
  * Declarations are NOT generated here (tsup's dts bundler needs the
  * TypeScript compiler API, which TypeScript 7 no longer ships); the

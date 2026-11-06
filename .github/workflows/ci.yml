@@ -32,7 +32,7 @@ jobs:
         run: |
           npm run typecheck
           npm run typecheck:lib
-          npm run typecheck --workspace @pollen/native
+          npm run typecheck --workspace @pollen-ui/native
 
       - name: Lint
         run: npm run lint

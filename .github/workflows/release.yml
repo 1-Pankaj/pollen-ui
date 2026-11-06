@@ -1,15 +1,27 @@
 name: Release
 
-# Publishes the web library to npm. @pollen/tokens and @pollen/native stay
-# workspace-only: the "@pollen" scope on npm belongs to an unrelated account,
-# so those two packages cannot be published under their current names.
+# Publishes one package per run, chosen at dispatch. The scoped packages
+# publish under the @pollen-ui scope: the bare "@pollen" scope on npm
+# belongs to an unrelated account, so "pollen-ui" doubles as the org name.
+# Both scoped packages set publishConfig.access = "public" in their
+# package.json, so a plain npm publish works.
 
 on:
   workflow_dispatch:
+    inputs:
+      package:
+        description: Package to publish
+        type: choice
+        required: true
+        default: pollen-ui
+        options:
+          - pollen-ui
+          - "@pollen-ui/tokens"
+          - "@pollen-ui/native"
 
 jobs:
   publish:
-    name: Publish pollen-ui
+    name: Publish ${{ github.event.inputs.package }}
     runs-on: ubuntu-latest
     # Manual dispatch only; a maintainer decides when a release goes out.
     environment: npm
@@ -25,7 +37,7 @@ jobs:
           HAS_TOKEN: ${{ secrets.NPM_TOKEN != '' }}
         run: |
           if [ "$HAS_TOKEN" != "true" ]; then
-            echo "::error::The NPM_TOKEN secret is not set, so npm publish cannot authenticate. Fix: repository Settings → Secrets and variables → Actions → New repository secret. Name: NPM_TOKEN. Value: an npm access token with publish rights (npmjs.com → profile picture → Access Tokens → Generate New Token → Classic, type Automation, or a Granular token with Read and write on Packages). Then re-run this workflow."
+            echo "::error::The NPM_TOKEN secret is not set, so npm publish cannot authenticate. Fix: repository Settings → Secrets and variables → Actions → New repository secret. Name: NPM_TOKEN. Value: an npm access token with publish rights (npmjs.com → profile picture → Access Tokens → Generate New Token → Classic, type Automation, or a Granular token with Read and write on Packages). The npm account must own the pollen-ui organization for the scoped packages. Then re-run this workflow."
             exit 1
           fi
 
@@ -39,13 +51,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Approve esbuild install script
+        run: npm install-scripts approve esbuild || true
+
       - name: Build
         run: |
-          npm run build --workspace @pollen/tokens
+          npm run build --workspace @pollen-ui/tokens
           npm run build:lib
 
       - name: Publish to npm
-        working-directory: packages/pollen-ui
+        working-directory: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen-ui/tokens' && 'packages/tokens' || 'packages/native' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
@@ -53,8 +68,9 @@ jobs:
       - name: Tag the release
         env:
           GH_TOKEN: ${{ github.token }}
+          PKG_DIR: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen-ui/tokens' && 'packages/tokens' || 'packages/native' }}
         run: |
-          VERSION=$(node -p "require('./packages/pollen-ui/package.json').version")
+          VERSION=$(node -p "require('./${PKG_DIR}/package.json').version")
           TAG="v${VERSION}"
           git tag "$TAG" 2>/dev/null || echo "tag $TAG already exists"
           git push origin "$TAG" || true

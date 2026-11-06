@@ -10,7 +10,7 @@
  *     the complete source with correct imports, components-used chips
  *     linking to docs, a working local TS/JS switch, and an AI prompt.
  *  4. Dependency notes on a template that needs next/link + framer-motion.
- *  5. React Native section on /docs/button with a real @pollen/native import.
+ *  5. React Native section on /docs/button with a real @pollen-ui/native import.
  *  6. Sidebar carries a Templates entry; all 25 detail pages respond 200.
  *
  * Usage: node scripts/p9-features-verify.mjs [baseURL]
@@ -205,7 +205,7 @@ try {
   const pre = (await page.locator("pre").first().textContent()) ?? "";
   if (
     body.includes("React Native") &&
-    (pre.includes('@pollen/native') || body.includes("@pollen/native")) &&
+    (pre.includes('@pollen-ui/native') || body.includes("@pollen-ui/native")) &&
     body.includes("react-native-reanimated")
   ) {
     pass("React Native section present on /docs/button");

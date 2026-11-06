@@ -1,8 +1,8 @@
 /**
- * @pollen/native
+ * @pollen-ui/native
  * The Pollen design language on iOS and Android. Sixteen primitives
  * that share their colors, shadows, spacing and springs with the
- * web library through @pollen/tokens.
+ * web library through @pollen-ui/tokens.
  *
  * Requires react-native >= 0.74 and react-native-reanimated >= 3.16
  * (plus react-native-gesture-handler >= 2.20 for the Slider).
@@ -108,4 +108,4 @@ export {
   type ShadowDepth,
   type ShadowStyle,
 } from "./lib/shadows";
-export type { PollenTheme } from "@pollen/tokens";
+export type { PollenTheme } from "@pollen-ui/tokens";

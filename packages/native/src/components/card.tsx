@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from "react-native";
-import { fontSize, radius, spacing } from "@pollen/tokens";
+import { fontSize, radius, spacing } from "@pollen-ui/tokens";
 import { usePollenTheme } from "../lib/theme";
 import { mapShadow } from "../lib/shadows";
 import { passthroughClassName } from "../lib/className";

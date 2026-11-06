@@ -7,7 +7,7 @@ import {
   type StyleProp,
   type ViewStyle,
 } from "react-native";
-import { radius, type PollenTheme } from "@pollen/tokens";
+import { radius, type PollenTheme } from "@pollen-ui/tokens";
 import { usePollenTheme, white } from "../lib/theme";
 import { passthroughClassName } from "../lib/className";
 

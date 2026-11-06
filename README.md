@@ -69,12 +69,12 @@ This repository is a small monorepo with three packages:
 | Package | What it is | Links |
 | --- | --- | --- |
 | [`pollen-ui`](packages/pollen-ui) | The web library: 63 components in five families, 103 icons, TypeScript types, stylesheet and Tailwind bridge. | [README](packages/pollen-ui/README.md) · [npm](https://www.npmjs.com/package/pollen-ui) |
-| [`@pollen/tokens`](packages/tokens) | The design tokens as plain TypeScript — colors, surfaces, shadows, radii, spacing, type scale, spring presets. | [README](packages/tokens/README.md) · in this repo |
-| [`@pollen/native`](packages/native) | The same design language on iOS and Android: React Native primitives sharing the tokens core. | [README](packages/native/README.md) · in this repo |
+| [`@pollen-ui/tokens`](packages/tokens) | The design tokens as plain TypeScript — colors, surfaces, shadows, radii, spacing, type scale, spring presets. | [README](packages/tokens/README.md) · [npm](https://www.npmjs.com/package/@pollen-ui/tokens) |
+| [`@pollen-ui/native`](packages/native) | The same design language on iOS and Android: React Native primitives sharing the tokens core. | [README](packages/native/README.md) · [npm](https://www.npmjs.com/package/@pollen-ui/native) |
 
-Web apps only ever need `pollen-ui`. `@pollen/tokens` and `@pollen/native`
-ship in this repository and are not published to npm — the `@pollen`
-scope on npm belongs to an unrelated account.
+Web apps only ever need `pollen-ui`. The scoped packages publish under
+the `@pollen-ui` scope — the bare `@pollen` scope on npm belongs to an
+unrelated account.
 
 ## Getting started
 
@@ -180,7 +180,7 @@ import { light, dark, springSnappy } from "pollen-ui/tokens";
 ```
 
 The same vocabulary backs
-[`@pollen/tokens`](packages/tokens) on React Native, and
+[`@pollen-ui/tokens`](packages/tokens) on React Native, and
 [`scripts/check-tokens-sync.mjs`](scripts/check-tokens-sync.mjs) fails
 CI when any of the three copies drift apart.
 
@@ -211,7 +211,7 @@ everything the library ships:
 
 ## React Native
 
-[`@pollen/native`](packages/native) brings the design language to iOS
+[`@pollen-ui/native`](packages/native) brings the design language to iOS
 and Android — Button, Input, Card, Checkbox, SegmentedControl, PinInput,
 Rating, Stepper and more, sixteen primitives in all — with Reanimated
 springs and shadows derived from the shared tokens. Each primitive is
@@ -267,7 +267,7 @@ for setup.
 | [Theming](https://1-pankaj.github.io/pollen-ui/docs/theming) | Tokens, dark mode, the Theme Studio |
 | [Frameworks](https://1-pankaj.github.io/pollen-ui/docs/frameworks) | Integration notes per framework |
 | [Mobile and touch](https://1-pankaj.github.io/pollen-ui/docs/mobile) | Touch targets and mobile behavior |
-| [React Native](https://1-pankaj.github.io/pollen-ui/docs/react-native) | The `@pollen/native` setup guide |
+| [React Native](https://1-pankaj.github.io/pollen-ui/docs/react-native) | The `@pollen-ui/native` setup guide |
 | [Licensing](https://1-pankaj.github.io/pollen-ui/docs/licensing) | What MIT covers, fonts included |
 | [Playground](https://1-pankaj.github.io/pollen-ui/playground) | Edit and run the real library in the browser |
 | [Templates](https://1-pankaj.github.io/pollen-ui/templates) | 26 copyable page templates |
@@ -302,9 +302,11 @@ Open http://localhost:3000. Press Cmd+K (or Ctrl+K) to search the docs.
   prerequisite: Settings → Pages → Source → *GitHub Actions*.
 - **npm** — publishing is a manual decision. Run the Release workflow
   from the Actions tab
-  ([`.github/workflows/release.yml`](.github/workflows/release.yml)),
-  which publishes `pollen-ui` only and requires an `NPM_TOKEN` secret
-  with publish rights. A push never publishes by itself.
+  ([`.github/workflows/release.yml`](.github/workflows/release.yml))
+  once per package — `pollen-ui`, `@pollen-ui/tokens`, `@pollen-ui/native`.
+  It requires an `NPM_TOKEN` secret with publish rights, and the npm
+  account behind it must own the `pollen-ui` organization for the scoped
+  packages. A push never publishes by itself.
 
 ## Contributing
 

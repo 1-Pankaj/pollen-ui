@@ -9,7 +9,7 @@
  *     with the exact import block recomputed from the identifiers the code
  *     actually uses (react hooks, next/link, framer-motion, pollen-ui).
  *  3. A syntax check of every emitted snippet via Sucrase.
- *  4. A check that the hand-written @pollen/native usage snippets in
+ *  4. A check that the hand-written @pollen-ui/native usage snippets in
  *     src/lib/native-usage.ts only import names the native package really
  *     exports.
  *
@@ -526,7 +526,7 @@ for (const m of nativeUsageSrc.matchAll(/import\s*\{([^}]+)\}\s*from\s*"@pollen\
     const parts = raw.split(/\s+as\s+/);
     const name = (parts[1] ?? parts[0]).trim();
     if (name && !nativeExports.has(name)) {
-      fail(`native-usage.ts imports "${name}" which @pollen/native does not export`);
+      fail(`native-usage.ts imports "${name}" which @pollen-ui/native does not export`);
     }
   }
 }

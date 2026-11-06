@@ -16,7 +16,7 @@
 - [ ] Interactive changes include keyboard support, focus handling and
       a reduced-motion story
 - [ ] Token changes: `npm run check:tokens` passes and
-      `@pollen/native` stays in agreement
+      `@pollen-ui/native` stays in agreement
 
 ## Screenshots
 

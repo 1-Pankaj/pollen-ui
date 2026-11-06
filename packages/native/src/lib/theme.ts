@@ -1,5 +1,5 @@
 import { useColorScheme } from "react-native";
-import { dark, light, type PollenTheme } from "@pollen/tokens";
+import { dark, light, type PollenTheme } from "@pollen-ui/tokens";
 
 /**
  * Theme resolution for the native primitives.
