@@ -1,6 +1,10 @@
 <div align="center">
 
-# Pollen UI
+<div align="center">
+  <img src="https://raw.githubusercontent.com/1-Pankaj/pollen-ui/main/public/logo-badge.svg" alt="Pollen UI logo" width="120" />
+  <h1>Pollen UI</h1>
+  <p><strong>React components for Next.js, with a design language that behaves.</strong></p>
+</div>
 
 **React components for Next.js, with a design language that behaves.**
 
