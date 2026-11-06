@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1-Pankaj/pollen-ui.git",
-    "directory": "tokens"
+    "directory": "packages/tokens"
   },
   "keywords": [
     "accessibility",
@@ -42,7 +42,11 @@
     "README.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsup && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit"
   },
