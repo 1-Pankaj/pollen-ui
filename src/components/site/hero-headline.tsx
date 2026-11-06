@@ -5,9 +5,8 @@ import { motion, useReducedMotion } from "framer-motion";
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
 /**
- * The hero statement, set the way the reference site sets its own:
- * two centered lines, the promise landing on one italic serif word.
- * Each line rises out of its own overflow mask.
+ * The hero statement: two centered lines, the promise landing on one
+ * italic serif word. Each line rises out of its own overflow mask.
  */
 export function HeroHeadline() {
   const reduce = useReducedMotion();
