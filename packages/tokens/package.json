@@ -1,0 +1,56 @@
+{
+  "name": "@pollen/tokens",
+  "version": "5.0.0",
+  "description": "Platform-neutral design tokens for the Pollen design language. One vocabulary of colors, shadows, radii and motion presets shared by the web library and the React Native sibling.",
+  "license": "MIT",
+  "author": "Pankaj Israni <https://github.com/1-Pankaj>",
+  "homepage": "https://github.com/1-Pankaj/pollen-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1-Pankaj/pollen-ui.git",
+    "directory": "tokens"
+  },
+  "keywords": [
+    "accessibility",
+    "component-library",
+    "components",
+    "dark-mode",
+    "design-system",
+    "design-tokens",
+    "framer-motion",
+    "nativewind",
+    "nextjs",
+    "react",
+    "react-native",
+    "tailwind-css-4",
+    "tailwindcss",
+    "ui"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/1-Pankaj/pollen-ui/issues"
+  }
+}

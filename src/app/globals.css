@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@import "../../packages/pollen-ui/src/css/pollen.css";
+/* Tailwind bridge: shared with the published package (pollen-ui/theme.css),
+   so the site and package consumers compile the exact same mapping. */
+@import "../../packages/pollen-ui/src/css/theme.css";
+
+@source "../../packages/pollen-ui/src";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* ------------------------------------------------------------------
+   Site accent themes. The header picker writes data-accent on
+   <html>; these rules retint --pollen-accent per theme, so every
+   component, chart and template follows without touching the
+   library.
+   ------------------------------------------------------------------ */
+
+[data-accent="iris"] {
+  --pollen-accent: #6e56cf;
+}
+[data-accent="teal"] {
+  --pollen-accent: #0d9373;
+}
+[data-accent="grass"] {
+  --pollen-accent: #3d8f4f;
+}
+[data-accent="amber"] {
+  --pollen-accent: #c2710c;
+}
+[data-accent="rose"] {
+  --pollen-accent: #e54666;
+}
+[data-accent="plum"] {
+  --pollen-accent: #8e4ec6;
+}
+.dark[data-accent="iris"],
+[data-accent="iris"].dark {
+  --pollen-accent: #9b8afb;
+}
+.dark[data-accent="teal"],
+[data-accent="teal"].dark {
+  --pollen-accent: #26c593;
+}
+.dark[data-accent="grass"],
+[data-accent="grass"].dark {
+  --pollen-accent: #5fb869;
+}
+.dark[data-accent="amber"],
+[data-accent="amber"].dark {
+  --pollen-accent: #f0a020;
+}
+.dark[data-accent="rose"],
+[data-accent="rose"].dark {
+  --pollen-accent: #f26e88;
+}
+.dark[data-accent="plum"],
+[data-accent="plum"].dark {
+  --pollen-accent: #bf7af0;
+}
+
+body {
+  background-color: var(--pollen-bg);
+  color: var(--pollen-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display serif for a single accent word. Not a body font. */
+.font-display-serif {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+/* Hero: the final word renders in the display serif. */
+.hero-accent em {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  padding-right: 0.06em;
+}
+
+/* ------------------------------------------------------------------
+   The hero scene: the component constellation. Real library
+   components float in a shallow perspective stage around the
+   headline. The dot grid sets a design-surface tone, the float
+   loop keeps each specimen adrift on its own clock, and the stage
+   tilt comes from framer motion in hero-scene.tsx.
+   ------------------------------------------------------------------ */
+
+.hero-grid {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--pollen-fg) 8%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(70% 62% at 50% 42%, black 26%, transparent 76%);
+  mask-image: radial-gradient(70% 62% at 50% 42%, black 26%, transparent 76%);
+}
+
+/* Each specimen bobs on its own duration and phase. The `translate`
+   property is animated so it composes with any transform scale. */
+.hero-float {
+  animation: hero-float var(--float-dur, 9s) ease-in-out var(--float-delay, 0s) infinite
+    alternate;
+}
+
+@keyframes hero-float {
+  from { translate: 0 -6px; }
+  to   { translate: 0 7px; }
+}
+
+.scene-grain { mix-blend-mode: overlay; }
+
+.scene-vignette {
+  background: radial-gradient(115% 100% at 50% 50%, transparent 60%, rgba(24, 26, 22, 0.1) 100%);
+}
+.dark .scene-vignette {
+  background: radial-gradient(115% 100% at 50% 50%, transparent 52%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Theme sweep: the new theme grows from the toggle as a circle.
+   The View Transitions API drives it; these rules stop the default
+   cross-fade so the clip-path animation is the only motion.
+   ------------------------------------------------------------------ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* Thin overlay scrollbars for long panes (sidebar, code, demo shells).
+   Firefox uses scrollbar-width/color; Safari and Chrome use the
+   webkit pseudo-elements. */
+.slim-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pollen-separator) transparent;
+}
+.slim-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.slim-scroll::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: var(--pollen-separator);
+}
+.slim-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}

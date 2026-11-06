@@ -1,0 +1,42 @@
+name: Feature request
+description: Propose a new component, variant, or capability.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome, but the design language is frozen —
+        proposals need to fit the existing visual system rather than
+        introduce a new one. Reactions on the issue are how these get
+        prioritized.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - New web component
+        - Improvement to an existing web component
+        - React Native package
+        - Tokens / theming
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to build, and what is missing or awkward today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: Sketch the JSX or props you imagine using. Rough is fine.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have tried
+      description: Existing components, other libraries, or workarounds.

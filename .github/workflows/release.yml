@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Package to publish
+        type: choice
+        required: true
+        default: pollen-ui
+        options:
+          - pollen-ui
+          - "@pollen/tokens"
+          - "@pollen/native"
+
+jobs:
+  publish:
+    name: Publish ${{ github.event.inputs.package }}
+    runs-on: ubuntu-latest
+    # Manual dispatch only; a maintainer decides when a release goes out.
+    environment: npm
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          npm run build --workspace @pollen/tokens
+          npm run build:lib
+
+      - name: Publish to npm
+        working-directory: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen/tokens' && 'packages/tokens' || 'packages/native' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+
+      - name: Tag the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PKG_DIR: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen/tokens' && 'packages/tokens' || 'packages/native' }}
+        run: |
+          VERSION=$(node -p "require('./${PKG_DIR}/package.json').version")
+          TAG="v${VERSION}"
+          git tag "$TAG" 2>/dev/null || echo "tag $TAG already exists"
+          git push origin "$TAG" || true

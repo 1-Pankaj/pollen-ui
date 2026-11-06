@@ -1,0 +1,258 @@
+/* ============================================================
+   Pollen UI design tokens
+   ------------------------------------------------------------
+   Import once in your app entry:
+     import "pollen-ui/styles.css";
+
+   The system is achromatic on purpose: near-black text, white
+   surfaces, and one blue accent used like punctuation. Surfaces
+   separate through elevation instead of outlines, so nothing on
+   screen is drawn with a hard line.
+
+   Light is the default theme. Add the .dark class on <html>
+   (or set data-theme="dark") for dark mode. Every token is a
+   CSS variable, so a rebrand is one file.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces. The page is a quiet gray so white cards can
+     float on it without needing an outline. */
+  --pollen-bg: #f7f7f8;
+  --pollen-card: #ffffff;
+  --pollen-fill: #f0f0f2;
+  --pollen-fill-strong: #e8e8eb;
+
+  /* Text */
+  --pollen-fg: #17171a;
+  --pollen-fg-muted: #61616c;
+  --pollen-fg-faint: #8d8d98;
+
+  /* Structure. Separators are 7 percent ink, felt rather than
+     seen. border tokens stay for custom themes that want them. */
+  --pollen-separator: rgba(20, 20, 30, 0.07);
+  --pollen-border: #eaeaea;
+  --pollen-border-strong: #d4d4d4;
+
+  /* Accents */
+  --pollen-accent: #0070f3;
+  --pollen-success: #29a383;
+  --pollen-success-ink: #157f56;
+  --pollen-warning: #f5a623;
+  --pollen-warning-ink: #b45309;
+  --pollen-danger: #e5484d;
+  --pollen-danger-ink: #d3252b;
+
+  /* Code surfaces stay dark in both themes */
+  --pollen-code-bg: #16161a;
+  --pollen-code-fg: #e6edf3;
+  --pollen-code-muted: #8b949e;
+
+  /* Effects. Layered shadows: one tight layer for contact,
+     one wide layer for depth. */
+  --pollen-shadow-xs: 0 1px 2px rgba(18, 18, 26, 0.06);
+  --pollen-shadow-sm: 0 1px 2px rgba(18, 18, 26, 0.04),
+    0 2px 8px rgba(18, 18, 26, 0.05);
+  --pollen-shadow-md: 0 2px 4px rgba(18, 18, 26, 0.04),
+    0 10px 28px -6px rgba(18, 18, 26, 0.1);
+  --pollen-shadow-lg: 0 4px 12px rgba(18, 18, 26, 0.06),
+    0 28px 68px -12px rgba(18, 18, 26, 0.2);
+
+  --pollen-font-sans: var(--font-geist-sans), ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --pollen-font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo,
+    monospace;
+}
+
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  color: var(--pollen-fg);
+
+  --pollen-bg: #0a0a0c;
+  --pollen-card: #161619;
+  --pollen-fill: #1f1f24;
+  --pollen-fill-strong: #2a2a30;
+
+  --pollen-fg: #f4f4f6;
+  --pollen-fg-muted: #a4a4b0;
+  --pollen-fg-faint: #70707c;
+
+  --pollen-separator: rgba(255, 255, 255, 0.07);
+  --pollen-border: #262626;
+  --pollen-border-strong: #343434;
+
+  --pollen-accent: #3291ff;
+  --pollen-success: #3dd68c;
+  --pollen-success-ink: #3dd68c;
+  --pollen-warning: #ffc163;
+  --pollen-warning-ink: #ffc163;
+  --pollen-danger: #ff6369;
+  --pollen-danger-ink: #ff6369;
+
+  --pollen-code-bg: #101014;
+  --pollen-code-fg: #e6edf3;
+  --pollen-code-muted: #8b949e;
+
+  /* Dark surfaces carry a faint top edge, the way light would
+     fall on a real object. It reads as depth, not as a line. */
+  --pollen-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --pollen-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --pollen-shadow-md: 0 8px 32px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --pollen-shadow-lg: 0 16px 56px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* The light theme, pinned. A .light wrapper forces light tokens
+   even on a dark page, which is how the theme previews render
+   both themes side by side. */
+.light,
+[data-theme="light"] {
+  color-scheme: light;
+  color: var(--pollen-fg);
+
+  --pollen-bg: #f7f7f8;
+  --pollen-card: #ffffff;
+  --pollen-fill: #f0f0f2;
+  --pollen-fill-strong: #e8e8eb;
+
+  --pollen-fg: #17171a;
+  --pollen-fg-muted: #61616c;
+  --pollen-fg-faint: #8d8d98;
+
+  --pollen-separator: rgba(20, 20, 30, 0.07);
+  --pollen-border: #eaeaea;
+  --pollen-border-strong: #d4d4d4;
+
+  --pollen-accent: #0070f3;
+  --pollen-success: #29a383;
+  --pollen-success-ink: #157f56;
+  --pollen-warning: #f5a623;
+  --pollen-warning-ink: #b45309;
+  --pollen-danger: #e5484d;
+  --pollen-danger-ink: #d3252b;
+
+  --pollen-code-bg: #16161a;
+  --pollen-code-fg: #e6edf3;
+  --pollen-code-muted: #8b949e;
+
+  --pollen-shadow-xs: 0 1px 2px rgba(18, 18, 26, 0.06);
+  --pollen-shadow-sm: 0 1px 2px rgba(18, 18, 26, 0.04),
+    0 2px 8px rgba(18, 18, 26, 0.05);
+  --pollen-shadow-md: 0 2px 4px rgba(18, 18, 26, 0.04),
+    0 10px 28px -6px rgba(18, 18, 26, 0.1);
+  --pollen-shadow-lg: 0 4px 12px rgba(18, 18, 26, 0.06),
+    0 28px 68px -12px rgba(18, 18, 26, 0.2);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+::selection {
+  background: color-mix(in srgb, var(--pollen-accent) 24%, transparent);
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--pollen-accent);
+  outline-offset: 2px;
+}
+
+/* Text fields draw their own soft accent ring, so the solid
+   outline would only double up as a hard border. */
+:where(input, textarea, select):focus-visible {
+  outline: none;
+}
+
+/* Components that draw their own focus ring - the slide-to-confirm
+   handle, for one - set data-focus-ring, and the solid outline
+   stands down so keyboard focus shows one ring, not two. */
+:where([data-focus-ring]):focus-visible {
+  outline: none;
+}
+
+/* Floating panels are containers, not controls, and menu items
+   draw their own soft focus fill, so the solid outline would
+   only trace hard rectangles around things that never asked
+   for it. Controls inside a dialog still get the outline when
+   they take focus themselves. */
+:where([role="menu"], [role="menuitem"], [role="listbox"], [role="option"], [role="dialog"]):focus-visible {
+  outline: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pollen-fill-strong) transparent;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+
+@keyframes pollen-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pollen-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pollen-indeterminate {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+@keyframes pollen-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: keep opacity and color, drop the movement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Thin overlay scrollbars for long panes (listboxes, code, sidebars).
+   Firefox uses scrollbar-width/color; Safari and Chrome use the
+   webkit pseudo-elements. */
+.slim-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pollen-separator) transparent;
+}
+.slim-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.slim-scroll::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: var(--pollen-separator);
+}
+.slim-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+*.log
+
+# Build artifacts
+packages/pollen-ui/dist/
+*.tgz
+shots/
+
+# Internal working notes (local only, not for distribution)
+docs/dev/PHASES.md

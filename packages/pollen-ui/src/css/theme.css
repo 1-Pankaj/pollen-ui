@@ -1,0 +1,40 @@
+/* ============================================================
+   Pollen UI — Tailwind CSS 4 bridge
+   ------------------------------------------------------------
+   Maps Tailwind color and font utilities onto the Pollen design
+   tokens, the same way the design system maps them in the docs
+   site. Import after the token stylesheet in your app entry CSS:
+
+     @import "tailwindcss";
+     @import "pollen-ui/styles.css";
+     @import "pollen-ui/theme.css";
+     @source "../node_modules/pollen-ui/dist";
+
+   With this file, component classes like bg-card, text-faint,
+   bg-fill-strong and text-accent compile to the Pollen tokens and
+   follow light/dark automatically. Import order matters: the
+   mapping is inline, so it resolves whatever the tokens are at
+   the point where a component renders.
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--pollen-bg);
+  --color-foreground: var(--pollen-fg);
+  --color-card: var(--pollen-card);
+  --color-fill: var(--pollen-fill);
+  --color-fill-strong: var(--pollen-fill-strong);
+  --color-muted-foreground: var(--pollen-fg-muted);
+  --color-faint: var(--pollen-fg-faint);
+  --color-border: var(--pollen-border);
+  --color-strong: var(--pollen-border-strong);
+  --color-accent: var(--pollen-accent);
+  --color-success: var(--pollen-success);
+  --color-success-ink: var(--pollen-success-ink);
+  --color-warning: var(--pollen-warning);
+  --color-warning-ink: var(--pollen-warning-ink);
+  --color-danger: var(--pollen-danger);
+  --color-danger-ink: var(--pollen-danger-ink);
+
+  --font-sans: var(--pollen-font-sans);
+  --font-mono: var(--pollen-font-mono);
+}

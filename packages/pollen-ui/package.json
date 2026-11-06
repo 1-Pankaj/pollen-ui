@@ -1,0 +1,77 @@
+{
+  "name": "pollen-ui",
+  "version": "5.0.0",
+  "description": "A React component library for Next.js. Careful typography, spring-based motion, light and dark themes out of the box, plus a premium set: stacked toasts, a full chat surface, slide to confirm, pressable cards, a magnifying dock with four edge positions, and templates that theme themselves.",
+  "license": "MIT",
+  "author": "Pankaj Israni <https://github.com/1-Pankaj>",
+  "homepage": "https://github.com/1-Pankaj/pollen-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1-Pankaj/pollen-ui.git",
+    "directory": "."
+  },
+  "keywords": [
+    "accessibility",
+    "animation",
+    "component-library",
+    "components",
+    "dark-mode",
+    "design-system",
+    "framer-motion",
+    "motion",
+    "nextjs",
+    "react",
+    "spring",
+    "tailwind-css-4",
+    "tailwindcss",
+    "ui"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.cjs"
+    },
+    "./styles.css": "./dist/pollen.css",
+    "./theme.css": "./dist/theme.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json && node scripts/prepend-directive.mjs && node scripts/copy-css.mjs",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^14.9.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "typescript": "^6.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/1-Pankaj/pollen-ui/issues"
+  }
+}
