@@ -10,7 +10,7 @@ can be interrupted. Light and dark are both first-class.
 
 [![CI](https://github.com/1-Pankaj/pollen-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/1-Pankaj/pollen-ui/actions/workflows/ci.yml)
 [![Deploy site](https://github.com/1-Pankaj/pollen-ui/actions/workflows/pages.yml/badge.svg)](https://github.com/1-Pankaj/pollen-ui/actions/workflows/pages.yml)
-[![npm](https://img.shields.io/badge/npm-pollen--ui%205.0.0-0070f3.svg)](https://www.npmjs.com/package/pollen-ui)
+[![npm](https://img.shields.io/npm/v/pollen-ui?color=0070f3&label=npm)](https://www.npmjs.com/package/pollen-ui)
 [![MIT License](https://img.shields.io/badge/license-MIT-17171a.svg)](LICENSE)
 [![React 19](https://img.shields.io/badge/React-18%20%7C%2019-17171a.svg)](https://react.dev)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-17171a.svg)](https://nextjs.org)
@@ -69,8 +69,12 @@ This repository is a small monorepo with three packages:
 | Package | What it is | Links |
 | --- | --- | --- |
 | [`pollen-ui`](packages/pollen-ui) | The web library: 63 components in five families, 103 icons, TypeScript types, stylesheet and Tailwind bridge. | [README](packages/pollen-ui/README.md) · [npm](https://www.npmjs.com/package/pollen-ui) |
-| [`@pollen/tokens`](packages/tokens) | The design tokens as installable TypeScript — colors, surfaces, shadows, radii, spacing, type scale, spring presets. | [README](packages/tokens/README.md) · [npm](https://www.npmjs.com/package/@pollen/tokens) |
-| [`@pollen/native`](packages/native) | The same design language on iOS and Android: React Native primitives sharing the tokens core. | [README](packages/native/README.md) · [npm](https://www.npmjs.com/package/@pollen/native) |
+| [`@pollen/tokens`](packages/tokens) | The design tokens as plain TypeScript — colors, surfaces, shadows, radii, spacing, type scale, spring presets. | [README](packages/tokens/README.md) · in this repo |
+| [`@pollen/native`](packages/native) | The same design language on iOS and Android: React Native primitives sharing the tokens core. | [README](packages/native/README.md) · in this repo |
+
+Web apps only ever need `pollen-ui`. `@pollen/tokens` and `@pollen/native`
+ship in this repository and are not published to npm — the `@pollen`
+scope on npm belongs to an unrelated account.
 
 ## Getting started
 
@@ -296,11 +300,11 @@ Open http://localhost:3000. Press Cmd+K (or Ctrl+K) to search the docs.
   deploys it to GitHub Pages
   ([`.github/workflows/pages.yml`](.github/workflows/pages.yml)). One
   prerequisite: Settings → Pages → Source → *GitHub Actions*.
-- **npm packages** — publishing is a manual decision. Run the Release
-  workflow from the Actions tab
+- **npm** — publishing is a manual decision. Run the Release workflow
+  from the Actions tab
   ([`.github/workflows/release.yml`](.github/workflows/release.yml)),
-  which requires an `NPM_TOKEN` secret with publish rights. A push
-  never publishes by itself.
+  which publishes `pollen-ui` only and requires an `NPM_TOKEN` secret
+  with publish rights. A push never publishes by itself.
 
 ## Contributing
 

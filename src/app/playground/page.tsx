@@ -43,7 +43,8 @@ export default function Page() {
   return <Button>Works in Next.js</Button>;
 }`;
 
-const RN_SNIPPET = `npm install @pollen/native
+const RN_SNIPPET = `# @pollen/native ships in the repository, not on npm:
+# github.com/1-Pankaj/pollen-ui → packages/native (TypeScript source)
 # requires react-native >= 0.74, react-native-reanimated >= 3.16
 # under Expo, NativeWind 4 handles the className passthrough
 

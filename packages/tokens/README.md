@@ -3,6 +3,10 @@
 The Pollen design language as plain data: colors, shadows, radii, spacing,
 type sizes and motion presets, for whatever platform renders next.
 
+> This package lives in the [Pollen UI monorepo](https://github.com/1-Pankaj/pollen-ui)
+> and is not published to npm. Web apps read the same values from
+> `pollen-ui` itself: `import { light, dark, springSnappy } from "pollen-ui/tokens"`.
+
 - **Zero dependencies.** Every value is a string or a number. Runs in the
   browser, in Node, and inside a React Native bundle.
 - **One source of truth.** The web stylesheet

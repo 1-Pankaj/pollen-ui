@@ -1,6 +1,6 @@
 # Pollen UI
 
-[![npm](https://img.shields.io/badge/npm-v5.0.0-0070f3.svg)](https://www.npmjs.com/package/pollen-ui)
+[![npm](https://img.shields.io/npm/v/pollen-ui?color=0070f3&label=npm)](https://www.npmjs.com/package/pollen-ui)
 [![MIT License](https://img.shields.io/badge/license-MIT-17171a.svg)](https://github.com/1-Pankaj/pollen-ui/blob/main/LICENSE)
 [![React 18 | 19](https://img.shields.io/badge/React-18%20%7C%2019-17171a.svg)](https://react.dev)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-17171a.svg)](https://tailwindcss.com)

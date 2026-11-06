@@ -1,21 +1,15 @@
 name: Release
 
+# Publishes the web library to npm. @pollen/tokens and @pollen/native stay
+# workspace-only: the "@pollen" scope on npm belongs to an unrelated account,
+# so those two packages cannot be published under their current names.
+
 on:
   workflow_dispatch:
-    inputs:
-      package:
-        description: Package to publish
-        type: choice
-        required: true
-        default: pollen-ui
-        options:
-          - pollen-ui
-          - "@pollen/tokens"
-          - "@pollen/native"
 
 jobs:
   publish:
-    name: Publish ${{ github.event.inputs.package }}
+    name: Publish pollen-ui
     runs-on: ubuntu-latest
     # Manual dispatch only; a maintainer decides when a release goes out.
     environment: npm
@@ -51,7 +45,7 @@ jobs:
           npm run build:lib
 
       - name: Publish to npm
-        working-directory: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen/tokens' && 'packages/tokens' || 'packages/native' }}
+        working-directory: packages/pollen-ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
@@ -59,9 +53,8 @@ jobs:
       - name: Tag the release
         env:
           GH_TOKEN: ${{ github.token }}
-          PKG_DIR: ${{ github.event.inputs.package == 'pollen-ui' && 'packages/pollen-ui' || github.event.inputs.package == '@pollen/tokens' && 'packages/tokens' || 'packages/native' }}
         run: |
-          VERSION=$(node -p "require('./${PKG_DIR}/package.json').version")
+          VERSION=$(node -p "require('./packages/pollen-ui/package.json').version")
           TAG="v${VERSION}"
           git tag "$TAG" 2>/dev/null || echo "tag $TAG already exists"
           git push origin "$TAG" || true

@@ -9,6 +9,10 @@ Each primitive is implemented with platform APIs: press feedback
 through Reanimated springs, shadows mapped to `shadowColor`/`elevation`
 pairs per platform, gesture work through react-native-gesture-handler.
 
+This package is part of the [Pollen UI monorepo](https://github.com/1-Pankaj/pollen-ui)
+and is not published to npm — the TypeScript source in `packages/native/src`
+is the distribution, which Metro and Expo compile directly.
+
 ## Components
 
 | Component | Variants | Notes |

@@ -11,7 +11,13 @@ export const metadata: Metadata = {
     "The Pollen design language on iOS and Android: install steps, usage for every component @pollen/native ships, and what is web-only today.",
 };
 
-const INSTALL_SNIPPET = `npm install @pollen/native
+const INSTALL_SNIPPET = `# @pollen/native is not on npm — the "@pollen" scope belongs to an
+# unrelated account. It ships as TypeScript source in the repository;
+# vendor it into your app as a file dependency:
+
+git clone https://github.com/1-Pankaj/pollen-ui.git
+cp -r pollen-ui/packages/native ./pollen-native
+npm install ./pollen-native
 
 # Peer dependencies (Expo resolves the matching versions):
 npx expo install react-native-reanimated react-native-gesture-handler
