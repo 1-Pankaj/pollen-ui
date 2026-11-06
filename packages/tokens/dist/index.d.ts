@@ -169,4 +169,3 @@ export declare const pollen: {
         readonly entrance: 0.3;
     };
 };
-export default pollen;

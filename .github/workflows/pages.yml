@@ -19,10 +19,10 @@ jobs:
     name: Build static export
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -33,10 +33,21 @@ jobs:
       - name: Approve esbuild install script
         run: npm install-scripts approve esbuild || true
 
-      - name: Enable GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Check GitHub Pages is enabled
+        # One-time setup that only a repository admin can do from the UI:
+        # Settings → Pages → Build and deployment → Source → "GitHub Actions".
+        # The workflow token cannot create the site itself (the create-site
+        # API requires administration access the Actions token never has),
+        # so a missing site would otherwise fail deep inside deploy with a
+        # bare "Resource not accessible by integration".
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            "${{ github.api_url }}/repos/${{ github.repository }}/pages")
+          if [ "$STATUS" = "404" ]; then
+            echo "::error::GitHub Pages is not enabled for this repository yet. Open Settings → Pages → Build and deployment → Source and select “GitHub Actions”, then re-run this workflow. That is a one-time, admin-only setting; everything after it is automated."
+            exit 1
+          fi
 
       - name: Compute base path
         run: |
@@ -55,7 +66,7 @@ jobs:
           NEXT_OUTPUT: export
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./out
 
@@ -69,4 +80,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -191,5 +191,3 @@ export const pollen = {
   easeOut,
   durations,
 } as const;
-
-export default pollen;

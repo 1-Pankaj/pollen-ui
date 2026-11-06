@@ -99,8 +99,7 @@ var pollen = {
   easeOut,
   durations
 };
-var index_default = pollen;
 
-export { dark, index_default as default, durations, easeOut, fontSize, light, pollen, radius, spacing, springGentle, springSnappy, springSoft };
+export { dark, durations, easeOut, fontSize, light, pollen, radius, spacing, springGentle, springSnappy, springSoft };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

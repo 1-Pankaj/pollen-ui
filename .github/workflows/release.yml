@@ -22,10 +22,21 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      - name: Verify NPM_TOKEN is configured
+        # Fail here, in seconds, with the fix — instead of after the full
+        # install and build, as a bare npm ENEEDAUTH.
+        env:
+          HAS_TOKEN: ${{ secrets.NPM_TOKEN != '' }}
+        run: |
+          if [ "$HAS_TOKEN" != "true" ]; then
+            echo "::error::The NPM_TOKEN secret is not set, so npm publish cannot authenticate. Fix: repository Settings → Secrets and variables → Actions → New repository secret. Name: NPM_TOKEN. Value: an npm access token with publish rights (npmjs.com → profile picture → Access Tokens → Generate New Token → Classic, type Automation, or a Granular token with Read and write on Packages). Then re-run this workflow."
+            exit 1
+          fi
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm

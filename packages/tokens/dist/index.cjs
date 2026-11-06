@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 // src/index.ts
 var light = {
   colors: {
@@ -103,10 +101,8 @@ var pollen = {
   easeOut,
   durations
 };
-var index_default = pollen;
 
 exports.dark = dark;
-exports.default = index_default;
 exports.durations = durations;
 exports.easeOut = easeOut;
 exports.fontSize = fontSize;
